@@ -1,0 +1,11 @@
+---
+- name: Test playbook
+  hosts: all
+  # become: true
+  gather_facts: true
+
+  tasks:
+    - name: Command
+      ansible.builtin.command:
+        cmd: whoami
+      changed_when: false
