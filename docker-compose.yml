@@ -16,7 +16,7 @@ services:
     restart: unless-stopped
     ports:
       - 3000:3000
-    image: semaphoreui/semaphore:latest
+    image: semaphoreui/semaphore:v2.8.90
     environment:
       SEMAPHORE_DB_USER: semaphore
       SEMAPHORE_DB_PASS: ${MYSQL_PASSWORD}
@@ -29,7 +29,7 @@ services:
       SEMAPHORE_ADMIN_NAME: admin
       SEMAPHORE_ADMIN_EMAIL: admin@localhost
       SEMAPHORE_ADMIN: admin
-      SEMAPHORE_ACCESS_KEY_ENCRYPTION: ${SEMAPHORE_ACCESS_KEY_ENCRYPTION}
+      # SEMAPHORE_ACCESS_KEY_ENCRYPTION: ${SEMAPHORE_ACCESS_KEY_ENCRYPTION}
     depends_on:
       - mysql # for postgres, change to: postgres
 volumes:

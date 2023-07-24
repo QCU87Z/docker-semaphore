@@ -9,3 +9,8 @@
       ansible.builtin.command:
         cmd: whoami
       changed_when: false
+      register: cmd_whoami
+
+    - name: Debug whoami
+      ansible.builtin.debug:
+        msg: "You are {{ cmd_whoami.stdout }}"
