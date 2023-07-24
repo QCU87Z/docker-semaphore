@@ -14,3 +14,14 @@
     - name: Debug whoami
       ansible.builtin.debug:
         msg: "You are {{ cmd_whoami.stdout }}"
+
+    - name: Command
+      ansible.builtin.command:
+        cmd: whoami
+      changed_when: false
+      register: cmd_whoami1
+      become: true
+
+    - name: Debug whoami
+      ansible.builtin.debug:
+        msg: "You are {{ cmd_whoami1.stdout }}"
