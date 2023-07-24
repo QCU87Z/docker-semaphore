@@ -17,7 +17,7 @@
 
     - name: Command
       ansible.builtin.command:
-        cmd: whoami
+        cmd: sudo whoami
       changed_when: false
       register: cmd_whoami1
       become: true
